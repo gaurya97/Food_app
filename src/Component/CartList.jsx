@@ -19,7 +19,7 @@ const [color2,setcolor2] = useState('#b3b3b3')
 
 const FilterData =(e)=>{
   if(e==='Top Rated'){
-    let FilterList = RestList.filter((e)=>(e.info.avgRating>5))
+    let FilterList = RestList.filter((e)=>(e.info.avgRating>4))
     console.log('FilterList',FilterList);
     SetRestList(FilterList);
   }
