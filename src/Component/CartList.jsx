@@ -19,7 +19,7 @@ const [color2,setcolor2] = useState('#b3b3b3')
 
 const FilterData =(e)=>{
   if(e==='Top Rated'){
-    let FilterList = RestList.filter((e)=>(e.info.avgRating>4))
+    let FilterList = RestList.filter((e)=>(e.info.avgRating>5))
     console.log('FilterList',FilterList);
     SetRestList(FilterList);
   }
@@ -48,6 +48,13 @@ console.log(RestarantName);
 
 
 if(RestList?.length===0){
+  if(color2 ==='#8A2BE2'){
+    return <>
+    <SearchBar/>
+    <ButtonTag FilterDataFunction ={FilterData} color1={color1} color2 ={color2} setcolor1 ={setcolor1} setcolor2={setcolor2}/>
+    <p className='w-full text-center py-2'>Not Found</p>
+    </>
+  }
     return 'loading'
    
 }
