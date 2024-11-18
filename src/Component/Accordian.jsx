@@ -23,7 +23,18 @@ export const Accordian = ({ body, head, id, showId, SetShowId }) => {
           <div className="">{head}</div>
           <div className="acc-t">{showId === id ?<FaAngleUp />:<FaAngleDown />}</div>
         </div>
-        {showId === id && <div className="accordion-content flex justify-center items-center p-4 m-4 h-auto  bg-gray-50 overflow-hidden rounded-b-lg-body"><AcoordianBody/></div>}
+        {showId === id && <div className="accordion-content flex justify-center items-center p-4 m-4 h-auto  bg-gray-50 overflow-hidden rounded-b-lg-body">
+          {body.map((e)=>{
+            // name,price,desc,rating,count
+          
+           return <AcoordianBody imageId ={e.card.info.imageId}  name ={e.card.info.name} price={e.card.info.price/100} desc={e.card.info.description} rating={e.card.info.ratings.aggregatedRating.rating}
+           count={e.card.info.ratings.aggregatedRating.ratingCountV2}
+           
+           />
+          })}
+          
+          
+          </div>}
       </div>
     </div>
   );

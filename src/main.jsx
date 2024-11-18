@@ -27,7 +27,12 @@ const AppRouter =createBrowserRouter([
       path:'/solution',
       element:<Solution/>
       
-        }
+        },
+        {
+          path:'/cart/:id',
+          element:<Product/>
+          
+            }
   
   ]
   }

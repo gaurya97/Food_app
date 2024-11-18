@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 // sm:max-w-xs md:max-w-xs lg:max-w-lg xl:max-w-xl
 import image from "../assets/Images/image.png";
 export const Cart = ({cart}) => {
@@ -22,7 +23,7 @@ export const Cart = ({cart}) => {
   
     <div className="flex justify-between items-center mt-4">
         <span className="text-xl font-bold text-green-600">{cart.sla.slaString}</span>
-        <button id="add-to-cart" className="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition">View</button>
+        <Link className='no-underline' to={`/cart/${cart.id}`}><button id="add-to-cart" className="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition">View</button></Link>
     </div>
 </div>
 
