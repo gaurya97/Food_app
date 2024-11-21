@@ -27,7 +27,7 @@ export const Accordian = ({ body, head, id, showId, SetShowId }) => {
           {body?.map((e)=>{
             // name,price,desc,rating,count
           
-           return <AcoordianBody key={e.card.info.id} imageId ={e?.card?.info?.imageId}  name ={e?.card?.info?.name} price={e?.card?.info?.price ?Math.floor(e.card.info.price/100):Math.floor(e.card.info?.defaultPrice/100)} desc={e.card.info.description} rating={e.card.info.ratings.aggregatedRating.rating}
+           return <AcoordianBody key={e.card.info.id} item={e?.card?.info} imageId ={e?.card?.info?.imageId}  name ={e?.card?.info?.name} price={e?.card?.info?.price ?Math.floor(e.card.info.price/100):Math.floor(e.card.info?.defaultPrice/100)} desc={e.card.info.description} rating={e.card.info.ratings.aggregatedRating.rating}
            count={e.card.info.ratings.aggregatedRating.ratingCountV2}
            
            />

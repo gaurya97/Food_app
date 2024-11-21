@@ -4,9 +4,14 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaAlignJustify } from "react-icons/fa6";
 import { CgCloseR } from "react-icons/cg";
+import { FaCartShopping } from "react-icons/fa6";
+import { useSelector } from "react-redux";
 export const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState("top-[-1000%]");
   const [toggleIcon, setToggleIcon] = useState(false);
+
+const cartItems =useSelector((store)=>store.cart.items);
+console.log(cartItems);
 const ToggleFunction =()=>{
   setToggleIcon(!toggleIcon);
               setToggleMenu((oState) => {
@@ -36,9 +41,12 @@ const ToggleFunction =()=>{
           </ul>
         </div>
         <div className="flex items-center gap-6  ">
-          <button className=" w-24 h-8 text-center bg-[#a6c1ee] text-white  rounded-xl hover:bg-black">
+          <button className="  w-24 h-8 text-center bg-[#a6c1ee] text-white  rounded-xl hover:bg-black">
             Sign in
           </button>
+          <span className ="text-base">
+          [{cartItems.length}]< FaCartShopping />
+          </span>
           <div
             onClick={(e) => {
               ToggleFunction();

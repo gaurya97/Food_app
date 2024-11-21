@@ -1,7 +1,14 @@
 import React from 'react'
 import image from "../assets/Images/image.png";
+import { addItems } from '../AppStore/CartSlice';
 import { MdCurrencyRupee } from "react-icons/md";
-const AcoordianBody = ({imageId,name,price,desc,rating,count}) => {
+import { useDispatch } from 'react-redux';
+const AcoordianBody = ({item,imageId,name,price,desc,rating,count}) => {
+
+  const dispatch =useDispatch();
+  const HandleAddItems =()=>{
+dispatch(addItems(item))
+  }
   return (
     <div>
       <div className="p-4 max-w-screen-lg mx-auto">
@@ -23,7 +30,7 @@ const AcoordianBody = ({imageId,name,price,desc,rating,count}) => {
                 <span className="ml-2 text-sm text-gray-500">({count?count:"No Rating"})</span>
             </div>
             <img src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/${imageId}`} className="w-full h-32 object-cover rounded-lg mb-4" alt="logo" />
-            <button className="bg-green-500 text-white w-3/5 py-2 my-2 rounded-lg hover:bg-green-600">Add</button>
+            <button onClick={HandleAddItems}  className="bg-green-500 text-white w-3/5 py-2 my-2 rounded-lg hover:bg-green-600">Add</button>
         </div>
 
     {/* </div> */}
