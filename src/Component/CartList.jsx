@@ -14,12 +14,12 @@ const PromotedCartsWithLable =PromotedCarts(Cart);
     // SetRestList(Restaurants);
 
 
-const [color1,setcolor1] = useState('#8A2BE2')
-const [color2,setcolor2] = useState('#b3b3b3')
+const [color1,setcolor1] = useState("8A2BE2")
+const [color2,setcolor2] = useState('b3b3b3')
 
 const FilterData =(e)=>{
   if(e==='Top Rated'){
-    let FilterList = RestList.filter((e)=>(e.info.avgRating>4))
+    let FilterList = RestList.filter((e)=>(e.info.avgRating>4.2))
     console.log('FilterList',FilterList);
     SetRestList(FilterList);
   }

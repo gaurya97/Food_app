@@ -20,14 +20,14 @@ export const Accordian = ({ body, head, id, showId, SetShowId }) => {
             });
           }}
         >
-          <div className="">{head}</div>
+          <div className=""><b>{head}({body.length})</b></div>
           <div className="acc-t">{showId === id ?<FaAngleUp />:<FaAngleDown />}</div>
         </div>
-        {showId === id && <div className="accordion-content flex justify-center items-center p-4 m-4 h-auto  bg-gray-50 overflow-hidden rounded-b-lg-body">
-          {body.map((e)=>{
+        {showId === id && <div className=" flex flex-col justify-center items-center w-[95%] md:w-[50%] m-auto my-1 p-auto h-auto  bg-gray-50 overflow-hidden rounded-b-lg-body">
+          {body?.map((e)=>{
             // name,price,desc,rating,count
           
-           return <AcoordianBody imageId ={e.card.info.imageId}  name ={e.card.info.name} price={e.card.info.price/100} desc={e.card.info.description} rating={e.card.info.ratings.aggregatedRating.rating}
+           return <AcoordianBody key={e.card.info.id} imageId ={e?.card?.info?.imageId}  name ={e?.card?.info?.name} price={e?.card?.info?.price ?Math.floor(e.card.info.price/100):Math.floor(e.card.info?.defaultPrice/100)} desc={e.card.info.description} rating={e.card.info.ratings.aggregatedRating.rating}
            count={e.card.info.ratings.aggregatedRating.ratingCountV2}
            
            />
