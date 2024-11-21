@@ -11,7 +11,7 @@ const AcoordianBody = ({imageId,name,price,desc,rating,count}) => {
     {/* <!-- Menu Items Grid --> */}
     {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"> */}
         {/* <!-- My Box Veg --> */}
-        <div className="border grid place-items-center rounded-lg p-4 shadow-md">
+        <div className="border grid md:max-w-60 w-72 md:h-[425px] max-h-[425px] my-2 place-items-center rounded-lg p-4 shadow-md">
             <div className="flex justify-between items-center mb-2">
                 <h2 className="text-lg font-bold mx-4">{name}</h2>
                 <span><MdCurrencyRupee /></span>
