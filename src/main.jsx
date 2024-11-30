@@ -32,7 +32,12 @@ const AppRouter =createBrowserRouter([
           path:'/cart/:id',
           element:<Product/>
           
-            }
+            },
+            {
+              path:'/myCart',
+              element:<Solution/>
+              
+                }
   
   ]
   }

@@ -10,7 +10,7 @@ export const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState("top-[-1000%]");
   const [toggleIcon, setToggleIcon] = useState(false);
 
-const cartItems =useSelector((store)=>store.cart.items);
+const cartItems =useSelector((store)=>store.cart.count);
 console.log(cartItems);
 const ToggleFunction =()=>{
   setToggleIcon(!toggleIcon);
@@ -45,7 +45,7 @@ const ToggleFunction =()=>{
             Sign in
           </button>
           <span className ="text-base">
-          [{cartItems.length}]< FaCartShopping />
+          <Link to={'/myCart'} className="no-underline">[{cartItems}]< FaCartShopping /></Link>
           </span>
           <div
             onClick={(e) => {
