@@ -3,8 +3,8 @@ import image from "../assets/Images/image.png";
 import { addItems,removeItem } from '../AppStore/CartSlice';
 import { MdCurrencyRupee } from "react-icons/md";
 import { useDispatch } from 'react-redux';
-const AcoordianBody = ({item}) => {
-const [AddedItemCount , setAddedItemCount] = useState(0);
+const AcoordianBody = ({item,count}) => {
+const [AddedItemCount , setAddedItemCount] = useState(count?count:0);
 console.log(AddedItemCount);
   const dispatch =useDispatch();
   const HandleAddItems =()=>{
@@ -20,7 +20,9 @@ const AddToLocalState =()=>{
 }
 const DeleteToLocalState =()=>{
   setAddedItemCount(AddedItemCount-1)
-  dispatch(removeItem())
+  dispatch(removeItem({item:item,
+    localState:AddedItemCount-1
+  }))
 }
 
   return (
@@ -32,7 +34,7 @@ const DeleteToLocalState =()=>{
     {/* <!-- Menu Items Grid --> */}
     {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"> */}
         {/* <!-- My Box Veg --> */}
-        <div className="border grid md:max-w-60 w-72 md:h-[425px] max-h-[500px]  my-2 place-items-center rounded-lg p-2 shadow-md">
+        <div className="border grid md:max-w-60 w-72 md:h-[425px] max-h-[500px]  my-2 place-items-center rounded-lg p-4 shadow-md">
             <div className="flex justify-between items-center mb-2">
                 <h2 className="text-lg font-bold mx-4">{item.name}</h2>
                 <span><MdCurrencyRupee /></span>

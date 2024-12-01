@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
 
 const SearchBar = () => {
+ 
   return (
     <div className="flex justify-center px-4 my-3">
     {/* <!-- Container for the search bar --> */}
     <div className="relative w-full max-w-2xl">
-      <input 
+    <input 
         type="text" 
         placeholder="Search Location"
         className="search-input outline-none w-full px-4 py-2 rounded-full bg-white border border-gray-300 shadow-sm text-gray-700 " 

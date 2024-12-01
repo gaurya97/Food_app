@@ -6,6 +6,7 @@ import Product from "./Component/Product.jsx";
 import {Solution} from "./Component/Solution.jsx";
 import { createBrowserRouter,RouterProvider } from "react-router-dom";
 import CartList from './Component/CartList.jsx';
+import {MyCart} from './Component/MyCart.jsx';
 
 const AppRouter =createBrowserRouter([
   {
@@ -35,7 +36,7 @@ const AppRouter =createBrowserRouter([
             },
             {
               path:'/myCart',
-              element:<Solution/>
+              element:<MyCart/>
               
                 }
   

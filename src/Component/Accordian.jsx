@@ -23,7 +23,7 @@ export const Accordian = ({ body, head, id, showId, SetShowId }) => {
           <div className=""><b>{head}({body.length})</b></div>
           <div className="acc-t">{showId === id ?<FaAngleUp />:<FaAngleDown />}</div>
         </div>
-        {showId === id && <div className=" flex flex-col justify-center items-center w-[95%] md:w-[50%] m-2 my-2 p-2 h-[100%]  bg-gray-50 overflow-hidden rounded-b-lg-body">
+        {showId === id && <div className=" flex flex-col justify-center items-center w-[95%] md:w-[50%] m-auto my-1 p-auto h-auto  bg-gray-50 overflow-hidden rounded-b-lg-body">
           {body?.map((e)=>{
             // name,price,desc,rating,count
           

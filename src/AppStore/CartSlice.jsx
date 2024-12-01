@@ -25,7 +25,12 @@ const CartSlice =createSlice({
            console.log(current(state.items));
         },
         removeItem:(state,action)=>{
-            state.items.pop();
+            const index =state.items.findIndex((item) =>item.item.id == action.payload.item.id)
+            if(action.payload.localState==0){
+                state.items.splice(index,1);
+            }
+            // state.items.pop();
+            state.count-=1
         },
         clearCart:(state,action)=>{
             state.count = 0;
