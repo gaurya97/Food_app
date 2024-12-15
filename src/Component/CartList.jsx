@@ -65,7 +65,7 @@ else{
         {/* <ButtonTag FilterDataFunction ={FilterData} color1={color1} color2 ={color2} setcolor1 ={setcolor1} setcolor2={setcolor2}/> */}
         <SearchBar/>
         <ButtonTag FilterDataFunction ={FilterData} color1={color1} color2 ={color2} setcolor1 ={setcolor1} setcolor2={setcolor2}/>
-        <div className="flex md:flex-row gap-2 items-center flex-col flex-wrap w-[100%] h-auto">
+        <div className="flex scrollbar-none md:flex-row gap-2 items-center flex-col flex-wrap w-[100%] h-auto">
             {
                 RestList?.map((e)=>{
                     let card =e.info;

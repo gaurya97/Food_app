@@ -20,8 +20,8 @@ const AppRouter =createBrowserRouter([
           },
 
       {
-  path:'/product',
-  element:<Product/>
+  path:'/home',
+  element:<CartList/>
   
     },
     {

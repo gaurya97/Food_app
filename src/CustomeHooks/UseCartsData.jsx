@@ -1,25 +1,20 @@
 import React from 'react'
-import { useState,useEffect } from 'react'
+import { useState,useEffect,useContext } from 'react'
+import CityContext from '../ContextApi/CityContextApi.jsx'
 const UseCartsData = (SetRestList) => {
 const [List,SetList]=useState([]);
-const [Long,SetLong]=useState(72.88560) 
-
+// const [Long,SetLong]=useState(72.88560) 
+const Citydata =useContext(CityContext);
+console.log('Citydata',Citydata);
 // 72.88560
-const [Lat,SetLat]=useState(19.07480)
+
 // 19.07480
  useEffect(()=>{
-navigator.geolocation.getCurrentPosition((position)=>{
-const {latitude,longitude}=position.coords;
-SetLong(longitude)
-SetLat(latitude);
-},(error)=>{
-console.log(error.message);
-})
 GetData();
- },[])
+ },[Citydata.latitude,Citydata.longitude])
 
 const GetData =async()=>{
-const res = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${Lat}&lng=${Long}&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`);
+const res = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${Citydata.latitude}&lng=${Citydata.longitude}&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`);
  const data =await res.json();
  console.log(data);
  let RestaurantsList;

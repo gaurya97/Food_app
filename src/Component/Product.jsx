@@ -1,8 +1,11 @@
 import { useParams } from "react-router-dom";
 import { Accordian } from "./Accordian";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import CityContext from "../ContextApi/CityContextApi";
 const Product =()=>{
   const {id} =useParams();
+  const {latitude,longitude} =useContext(CityContext)
+  
 const [product,setProduct] =useState(null);
 const [productHead,setProductHead] =useState(null);
 useEffect(()=>{
@@ -10,7 +13,7 @@ useEffect(()=>{
 },[])
 
 const GetProductData =async(id)=>{
-const res =await fetch(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.07480&lng=72.88560&restaurantId=${id}`)
+const res =await fetch(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=${latitude}&lng=${longitude}&restaurantId=${id}`)
 const data =await res.json();
 console.log(data.data.cards);
 setProductHead(data.data.cards[2]?.card?.card?.info)

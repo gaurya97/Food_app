@@ -33,7 +33,7 @@ const ToggleFunction =()=>{
           className={`md:static absolute md:bg-[#f2f2f2e3]  transition: all 0.3s ease duration-1000  bg-[#ffffff]  md:min-h-fit min-h-[60vh] left-0 ${toggleMenu} md:w-auto w-full items-center px-5`}
         >
           <ul className="flex md:flex-row flex-col justify-around items-center md:w-auto md:min-h-fit md:gap-20 min-h-[60vh]">
-            <li className="hover:text-gray-500 md:border-none text-center border border-slate-300 md:w-auto md:block grid place-items-center md:h-auto h-8 rounded-lg w-36" onClick={()=>ToggleFunction()}><Link to={'/product'} className="no-underline">Product</Link></li>
+            <li className="hover:text-gray-500 md:border-none text-center border border-slate-300 md:w-auto md:block grid place-items-center md:h-auto h-8 rounded-lg w-36" onClick={()=>ToggleFunction()}><Link to={'/home'} className="no-underline">Home</Link></li>
             <li className="hover:text-gray-500 md:border-none text-center border border-slate-300 md:w-auto md:block grid place-items-center md:h-auto h-8 rounded-lg w-36" onClick={()=>ToggleFunction()}><Link to={'/solution'} className="no-underline">Solution</Link></li>
             <li className="hover:text-gray-500 md:border-none text-center border border-slate-300 md:w-auto md:block grid place-items-center md:h-auto h-8 rounded-lg w-36">Resource</li>
             <li className="hover:text-gray-500 md:border-none text-center border border-slate-300 md:w-auto md:block grid place-items-center md:h-auto h-8 rounded-lg w-36">Developers</li>
