@@ -10,13 +10,16 @@ console.log('Citydata',Citydata);
 
 // 19.07480
  useEffect(()=>{
-GetData();
+
+        GetData();
+    
+
  },[Citydata.latitude,Citydata.longitude])
 
 const GetData =async()=>{
 const res = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${Citydata.latitude}&lng=${Citydata.longitude}&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`);
  const data =await res.json();
- console.log(data);
+//  console.log(data);
  let RestaurantsList;
 if(data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants){
     RestaurantsList=data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;

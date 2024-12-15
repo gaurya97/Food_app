@@ -7,6 +7,14 @@ import {Solution} from "./Component/Solution.jsx";
 import { createBrowserRouter,RouterProvider } from "react-router-dom";
 import CartList from './Component/CartList.jsx';
 import {MyCart} from './Component/MyCart.jsx';
+import {
+  // useQuery,
+  // useMutation,
+  // useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query';
+const queryClient = new QueryClient()
 
 const AppRouter =createBrowserRouter([
   {
@@ -46,6 +54,9 @@ const AppRouter =createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-       <RouterProvider router={AppRouter}></RouterProvider>
+      <QueryClientProvider client={queryClient}>
+      <RouterProvider router={AppRouter}></RouterProvider>
+    </QueryClientProvider>
+      
   </StrictMode>,
 )

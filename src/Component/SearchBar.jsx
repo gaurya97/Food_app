@@ -28,7 +28,7 @@ SetcityData(cities);
 
 const HandleChange=(el)=>{
 setInput(el.target.value)
- Debounce(HandleChangeLogic,4000,el)
+ Debounce(HandleChangeLogic,400,el)
 // [{city:"Search For Your City"}]
 }
 
@@ -69,8 +69,8 @@ const HandleBlur =(e)=>{
         return acc;
       },[])
      
-       return <li key={e.id} onClick={()=>HandlleSelectedCity(e)} className="list-none  text-start border-red-300 mt-1 mb-1 mx-2 " >{str.map((e)=>{
-        return <span className={e===input.toLocaleLowerCase()?'font-bold text-green-500':""}>{e}</span>
+       return <li key={e.id} onClick={()=>HandlleSelectedCity(e)} className="list-none  text-start border-red-300 mt-1 mb-1 mx-2 " >{str.map((e,index)=>{
+        return <span key={index} className={e===input.toLocaleLowerCase()?'font-bold text-green-500':""}>{e}</span>
        })}</li>
     })}
     </div>

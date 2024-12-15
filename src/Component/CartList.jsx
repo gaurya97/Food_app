@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import UseCartsData from '../CustomeHooks/UseCartsData'
+import {UseReactQuerycartsData} from '../CustomeHooks/UseReactQuerycartsData'
 import {Cart,PromotedCarts} from './Cart'
 import SearchBar from './SearchBar';
 // import ShimmerList from './ShimmerList';
@@ -8,8 +9,17 @@ import ButtonTag from './ButtonTag';
 {/* <ShimmerList/> */}
 const CartList = () => {
 
-const [RestList,SetRestList] =useState([]);
-const Restaurants = UseCartsData(SetRestList);
+
+// const Restaurants = UseCartsData(SetRestList);
+const {isPending, isError, List, error} = UseReactQuerycartsData();
+const [RestList,SetRestList] =useState(List); 
+console.log('RestList',RestList);
+// SetRestList(List);
+
+console.log('isPending',isPending);
+console.log('isError',isError);
+console.log('list',List);
+console.log('error',error);
 const PromotedCartsWithLable =PromotedCarts(Cart);
     // SetRestList(Restaurants);
 
@@ -24,7 +34,7 @@ const FilterData =(e)=>{
     SetRestList(FilterList);
   }
   else{
-    SetRestList(Restaurants);
+    SetRestList(List);
   }
 }
 
@@ -35,7 +45,7 @@ console.log(RestarantName);
       return e.info.name.toLocaleLowerCase().includes(RestarantName.toLocaleLowerCase());
     })
    SearchResult.length>0 ? SetRestList(SearchResult):'';
-    console.log(SearchResult);
+    // console.log(SearchResult);
     // console.log(RestList);
 }
 
@@ -46,8 +56,8 @@ console.log(RestarantName);
 
 
 
-
-if(RestList?.length===0){
+// RestList?.length===0
+if(isPending){
   if(color2 ==='#8A2BE2'){
     return <>
     <SearchBar/>
