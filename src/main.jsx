@@ -45,7 +45,7 @@ const AppRouter =createBrowserRouter([
         },
         {
           path:'/cart/:id',
-          element: <Suspense fallback={ <div class="flex items-center justify-center fixed top-0 left-0 w-screen h-screen bg-white bg-opacity-80 z-50">
+          element: <Suspense fallback={ <div className="flex items-center justify-center fixed top-0 left-0 w-screen h-screen bg-white bg-opacity-80 z-50">
             <Loader active ={true} inline="centered" size='medium' color='blue'>
               Loading...
               </Loader>

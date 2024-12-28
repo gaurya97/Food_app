@@ -34,10 +34,10 @@ const ToggleFunction =()=>{
         >
           <ul className="flex md:flex-row flex-col justify-around items-center md:w-auto md:min-h-fit md:gap-20 min-h-[60vh]">
             <li className="hover:text-gray-500 md:border-none text-center border border-slate-300 md:w-auto md:block grid place-items-center md:h-auto h-8 rounded-lg w-36" onClick={()=>ToggleFunction()}><Link to={'/home'} className="no-underline">Home</Link></li>
-            <li className="hover:text-gray-500 md:border-none text-center border border-slate-300 md:w-auto md:block grid place-items-center md:h-auto h-8 rounded-lg w-36" onClick={()=>ToggleFunction()}><Link to={'/solution'} className="no-underline">Solution</Link></li>
-            <li className="hover:text-gray-500 md:border-none text-center border border-slate-300 md:w-auto md:block grid place-items-center md:h-auto h-8 rounded-lg w-36">Resource</li>
-            <li className="hover:text-gray-500 md:border-none text-center border border-slate-300 md:w-auto md:block grid place-items-center md:h-auto h-8 rounded-lg w-36">Developers</li>
-            <li className="hover:text-gray-500 md:border-none text-center border border-slate-300 md:w-auto md:block grid place-items-center md:h-auto h-8 rounded-lg w-36">Pricing</li>
+            <li className="hover:text-gray-500 md:border-none text-center border border-slate-300 md:w-auto md:block grid place-items-center md:h-auto h-8 rounded-lg w-36" onClick={()=>ToggleFunction()}><Link to={'/solution'} className="no-underline">Contact</Link></li>
+            <li className="hover:text-gray-500 md:border-none text-center border border-slate-300 md:w-auto md:block grid place-items-center md:h-auto h-8 rounded-lg w-36">About</li>
+            <li className="hover:text-gray-500 md:border-none text-center border border-slate-300 md:w-auto md:block grid place-items-center md:h-auto h-8 rounded-lg w-36">React Insights</li>
+            <li className="hover:text-gray-500 md:border-none text-center border border-slate-300 md:w-auto md:block grid place-items-center md:h-auto h-8 rounded-lg w-36">Js Insights</li>
           </ul>
         </div>
         <div className="flex items-center gap-6  ">

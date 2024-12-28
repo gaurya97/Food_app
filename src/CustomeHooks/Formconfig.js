@@ -9,10 +9,9 @@ export const Formconfig =[
         lable:"username",
         value:'',
         error:false,
-        validation:{
-            required:true,
-            minlength:5
-        }
+        required:true,
+        minlength:5,
+        focus:'false'
         
     },
     {
@@ -23,10 +22,9 @@ export const Formconfig =[
         lable:"email",
         value:'',
         error:false,
-        validation:{
-            required:true,
-            minlength:5
-        }
+        required:true,
+        minlength:5,
+        focus:'false'
     },
     {
         id:3,
@@ -36,10 +34,9 @@ export const Formconfig =[
         lable:"mobile no",
         value:'',
         error:false,
-        validation:{
-            required:true,
-            minlength:5
-        }
+        required:true,
+        minlength:5,
+        focus:'false'
     },
     {
         id:4,
@@ -49,24 +46,51 @@ export const Formconfig =[
         lable:"country",
         value:'',
         error:false,
-        validation:{
-            required:true,
-            minlength:5
-        }
+        required:true,
+        minlength:5,
+        focus:'false'
         
     },
     {
         id:5,
         type:"checkbox",
+        name:"male",
+        Placeholder:"male",
+        lable:"male",
+        value:'',
+        checked:false,
+        error:false,
+        required:true,
+        minlength:5,
+        focus:'false'
+        
+    },
+    {
+        id:6,
+        type:"checkbox",
+        name:"female",
+        Placeholder:"female",
+        lable:"female",
+        value:'',
+        checked:false,
+        error:false,
+        required:true,
+        minlength:5,
+        focus:'false'
+        
+    },
+    {
+        id:7,
+        type:"checkbox",
         name:"checkbox",
         Placeholder:"enter country",
         lable:"Accept term and condition",
-        value:false,
+        value:'',
+        checked:false,
         error:false,
-        validation:{
-            required:true,
-            minlength:5
-        }
+        required:true,
+        minlength:5,
+        focus:'false'
         
     }
 ]

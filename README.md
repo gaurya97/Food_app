@@ -6,3 +6,11 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+// jest
+npm install --save-dev @testing-library/react
+npm i -D jest
+npm install --save-dev babel-jest @babel/core @babel/preset-env // installing bable dependancy
+create babel.config.js file.
+npx jest --init  // jest configuration
+npm install --save-dev jest-environment-jsdom

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import AcoordianBody from "./AcoordianBody";
 export const MyCart =()=>{
@@ -9,6 +10,7 @@ const cartItems =useSelector((store)=>store.cart.items);
     return (<>
         <div className="flex flex-col justify-center items-center w-[95%] md:w-[50%] m-auto my-1 p-auto h-auto  bg-gray-50 overflow-hidden rounded-b-lg-body">
          <h3> Your Cart Is Empty! Add Items To The Cart</h3>
+         <Link to={'/home'}><button>Browse Items</button></Link>
         </div>
         </>)
  }else{

@@ -23,7 +23,7 @@ export const UseReactQuerycartsData = () => {
         return RestaurantsList;
     }
 
- return useQuery({ queryKey: ['cartData',Citydata.latitude,Citydata.longitude], queryFn: Getdata,staleTime:60000 })
+ return useQuery({ queryKey: ['cartData',Citydata.latitude,Citydata.longitude], queryFn: Getdata,staleTime:0 })
    
      
 }
